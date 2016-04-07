@@ -5,7 +5,7 @@ import DuckImage from './Duck.jpg'
 import classes from './HomeView.scss'
 import { map, findIndex } from 'lodash';
 import Box from '../../components/Box'
-import { receiveTerms } from '../../redux/modules/terms'
+import { fetchTerms, sendTerms } from '../../redux/modules/terms'
 
 // We can use Flow (http://flowtype.org/) to type our component's props
 // and state. For convenience we've included both regular propTypes and
@@ -26,7 +26,7 @@ export class HomeView extends React.Component<void, Props, void> {
   }
 
   componentWillMount() {
-    this.props.dispatch(receiveTerms());
+    this.props.dispatch(fetchTerms();
   }
 
   toggleStatus = (status, index) => {
@@ -36,6 +36,10 @@ export class HomeView extends React.Component<void, Props, void> {
     terms[index] = term
 
     this.setState({ terms: terms })
+  }
+
+  sendTerms = () => {
+    this.props.dispatch(sendTerms(this.props.terms));
   }
 
   render () {
@@ -50,6 +54,8 @@ export class HomeView extends React.Component<void, Props, void> {
             })
           }
         </ul>
+        <p> asdfasdf</p>
+        <button onClick={ this.sendTerms }>Send the shit</button>
       </div>
     )
   }
