@@ -26,7 +26,7 @@ export class HomeView extends React.Component<void, Props, void> {
   }
 
   componentWillMount() {
-    this.props.dispatch(fetchTerms();
+    this.props.dispatch(fetchTerms());
   }
 
   toggleStatus = (status, index) => {
@@ -54,7 +54,6 @@ export class HomeView extends React.Component<void, Props, void> {
             })
           }
         </ul>
-        <p> asdfasdf</p>
         <button onClick={ this.sendTerms }>Send the shit</button>
       </div>
     )
