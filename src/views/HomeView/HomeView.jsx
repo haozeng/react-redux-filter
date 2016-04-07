@@ -45,8 +45,26 @@ export class HomeView extends React.Component<void, Props, void> {
   render () {
     const { terms } = this.props;
 
+    const buttonStyle = {
+      'marginTop': 20,
+      'height': 40,
+      'backgroundColor': '#fc0',
+      'border':'1px solid #e6b800',
+      'text-align': 'center',
+      'color':'#fff',
+      'border-radius': 3,
+      'font-size': 20,
+      'padding':5,
+      'width':200,
+      'cursor':'pointer'
+    }
+
+    const containerStyle = {
+      'textAlign': 'center'
+    }
+
     return (
-      <div>
+      <div style={containerStyle}>
         <ul>
           {
             map(terms, (term) => {
@@ -54,7 +72,7 @@ export class HomeView extends React.Component<void, Props, void> {
             })
           }
         </ul>
-        <button onClick={ this.sendTerms }>Send the shit</button>
+        <button style={buttonStyle} onClick={ this.sendTerms }>show your matches</button>
       </div>
     )
   }

@@ -22,7 +22,8 @@ function receiveTerms(terms) {
 export function fetchTerms() {
   return dispatch => {
     // This will call the fucking api to get the terms
-    const terms = [ { text: 'test', status: true }, { text: 'test2', status: false } ]
+    const terms = [ { text: 'movie', status: true }, { text: 'entertainment', status: false },
+                    { text: 'electronics', status: false }, { text: 'fitness', status: false } ]
     dispatch(receiveTerms(terms))
   }
 }
