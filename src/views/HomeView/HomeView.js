@@ -2,6 +2,7 @@
 import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { increment, doubleAsync } from '../../redux/modules/counter'
+import { receiveTerms } from '../../redux/modules/terms'
 import DuckImage from './Duck.jpg'
 import classes from './HomeView.scss'
 
@@ -15,7 +16,8 @@ import classes from './HomeView.scss'
 type Props = {
   counter: number,
   doubleAsync: Function,
-  increment: Function
+  increment: Function,
+  terms: array
 };
 
 // We avoid using the `@connect` decorator on the class definition so
@@ -25,7 +27,8 @@ export class HomeView extends React.Component<void, Props, void> {
   static propTypes = {
     counter: PropTypes.number.isRequired,
     doubleAsync: PropTypes.func.isRequired,
-    increment: PropTypes.func.isRequired
+    increment: PropTypes.func.isRequired,
+    terms: PropTypes.array.isRequired
   };
 
   render () {
@@ -57,9 +60,11 @@ export class HomeView extends React.Component<void, Props, void> {
 }
 
 const mapStateToProps = (state) => ({
-  counter: state.counter
+  counter: state.counter,
+  terms: state.terms
 })
 export default connect((mapStateToProps), {
   increment: () => increment(1),
-  doubleAsync
+  doubleAsync,
+  receiveTerms
 })(HomeView)
