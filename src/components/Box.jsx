@@ -15,8 +15,8 @@ class Box extends React.Component {
     return (
       <div className='box'>
         <div className='text' onClick={ () => toggleStatus(status, index) }>{ text }</div>
-        <div className={ `plus-${ status }` }></div>
-        <div className={ `circle-${ status }` }></div>
+        { status ? <div> &#43; </div> : <div style={{ display: 'none' }}> &#43; </div> }
+        { status ? <div style={{ display: 'none' }}> &#8730; </div> : <div> &#8730; </div> }
       </div>
     )
   }
