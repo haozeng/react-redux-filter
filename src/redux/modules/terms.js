@@ -12,10 +12,10 @@ export const RECEIVE_TERMS = 'RECEIVE_TERMS'
 // if you'd like to learn more you can check out: flowtype.org.
 // DOUBLE NOTE: there is currently a bug with babel-eslint where a `space-infix-ops` error is
 // incorrectly thrown when using arrow functions, hence the oddity.
-export function receiveTerms (terms): Action {
+export function receiveTerms() {
   return {
     type: RECEIVE_TERMS,
-    payload: terms
+    payload: [ { text: 'test', status: true }, { text: 'test2', status: false } ]
   }
 }
 
@@ -27,7 +27,7 @@ export const actions = {
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [RECEIVE_TERMS]: (state: number, action: {payload: number}): number => state + action.payload
+  [RECEIVE_TERMS]: (state, action) => action.payload
 }
 
 // ------------------------------------
